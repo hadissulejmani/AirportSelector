@@ -5,7 +5,7 @@
         InitializeComponent()
     End Sub
 
-    Private Sub ShortName_validating(sender As Object, e As EventArgs)
+    Private Sub ShortName_Validating(sender As Object, e As EventArgs)
         If txtShortName.Text.Trim().Length <> 3 Then
             Dim errorProvider As ErrorProvider = New ErrorProvider("shortname needs to be 3 chars!")
             'Throw errorProvider

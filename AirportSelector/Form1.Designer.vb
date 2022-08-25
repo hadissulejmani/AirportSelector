@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnAddDestination = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnRemoveAirport = New System.Windows.Forms.Button()
         Me.lblAirports = New System.Windows.Forms.Label()
         Me.lblDestinations = New System.Windows.Forms.Label()
         Me.AirportListBox = New System.Windows.Forms.ListBox()
@@ -51,15 +51,15 @@ Partial Class Form1
         Me.btnAddDestination.Text = "Додади дестинација"
         Me.btnAddDestination.UseVisualStyleBackColor = False
         '
-        'Button2
+        'btnRemoveAirport
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.Button2.Location = New System.Drawing.Point(41, 408)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(378, 45)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Избриши аеродром"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnRemoveAirport.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnRemoveAirport.Location = New System.Drawing.Point(41, 408)
+        Me.btnRemoveAirport.Name = "btnRemoveAirport"
+        Me.btnRemoveAirport.Size = New System.Drawing.Size(378, 45)
+        Me.btnRemoveAirport.TabIndex = 11
+        Me.btnRemoveAirport.Text = "Избриши аеродром"
+        Me.btnRemoveAirport.UseVisualStyleBackColor = False
         '
         'lblAirports
         '
@@ -106,7 +106,7 @@ Partial Class Form1
         Me.Controls.Add(Me.AirportListBox)
         Me.Controls.Add(Me.lblDestinations)
         Me.Controls.Add(Me.lblAirports)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnRemoveAirport)
         Me.Controls.Add(Me.btnAddDestination)
         Me.Controls.Add(Me.btnAdd)
         Me.Name = "Form1"
@@ -117,7 +117,7 @@ Partial Class Form1
     End Sub
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnAddDestination As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnRemoveAirport As Button
     Friend WithEvents lblAirports As Label
     Friend WithEvents lblDestinations As Label
     Friend WithEvents AirportListBox As ListBox

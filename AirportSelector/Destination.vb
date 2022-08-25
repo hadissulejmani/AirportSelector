@@ -14,7 +14,7 @@
     End Sub
 
     Public Function toString() As String
-        Return String.Format("{0}\t{1}km - {2}EUR", name, length, price)
+        Return String.Format("{0}   {1}km - {2}EUR", name, length, price)
     End Function
 
     Public Function getName() As String
