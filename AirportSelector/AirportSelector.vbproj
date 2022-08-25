@@ -72,13 +72,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAirport.vb">
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAirport.Designer.vb">
-      <DependentUpon>AddAirport.vb</DependentUpon>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddDestination.Designer.vb">
+      <DependentUpon>AddDestination.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddDestination.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Airport.vb" />
+    <Compile Include="Destination.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -94,16 +102,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NewAirport.Designer.vb">
+      <DependentUpon>NewAirport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewAirport.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddAirport.resx">
-      <DependentUpon>AddAirport.vb</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDestination.resx">
+      <DependentUpon>AddDestination.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAirport.resx">
+      <DependentUpon>NewAirport.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
