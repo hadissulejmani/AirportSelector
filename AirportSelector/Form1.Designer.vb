@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnAddDestination = New System.Windows.Forms.Button()
         Me.btnRemoveAirport = New System.Windows.Forms.Button()
@@ -29,6 +30,16 @@ Partial Class Form1
         Me.lblDestinations = New System.Windows.Forms.Label()
         Me.AirportListBox = New System.Windows.Forms.ListBox()
         Me.DestinationsListBox = New System.Windows.Forms.ListBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.WINFORMS_DBDataSet = New AirportSelector.WINFORMS_DBDataSet()
+        Me.AirportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AirportTableAdapter = New AirportSelector.WINFORMS_DBDataSetTableAdapters.AirportTableAdapter()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShortNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WINFORMS_DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AirportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAdd
@@ -81,6 +92,7 @@ Partial Class Form1
         '
         'AirportListBox
         '
+        Me.AirportListBox.DataSource = Me.AirportBindingSource
         Me.AirportListBox.FormattingEnabled = True
         Me.AirportListBox.ItemHeight = 20
         Me.AirportListBox.Location = New System.Drawing.Point(41, 53)
@@ -97,11 +109,63 @@ Partial Class Form1
         Me.DestinationsListBox.Size = New System.Drawing.Size(378, 244)
         Me.DestinationsListBox.TabIndex = 17
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NameDataGridViewTextBoxColumn, Me.CityDataGridViewTextBoxColumn, Me.ShortNameDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.AirportBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(488, 341)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 62
+        Me.DataGridView1.RowTemplate.Height = 28
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 18
+        '
+        'WINFORMS_DBDataSet
+        '
+        Me.WINFORMS_DBDataSet.DataSetName = "WINFORMS_DBDataSet"
+        Me.WINFORMS_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AirportBindingSource
+        '
+        Me.AirportBindingSource.DataMember = "Airport"
+        Me.AirportBindingSource.DataSource = Me.WINFORMS_DBDataSet
+        '
+        'AirportTableAdapter
+        '
+        Me.AirportTableAdapter.ClearBeforeFill = True
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.NameDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.Width = 150
+        '
+        'CityDataGridViewTextBoxColumn
+        '
+        Me.CityDataGridViewTextBoxColumn.DataPropertyName = "City"
+        Me.CityDataGridViewTextBoxColumn.HeaderText = "City"
+        Me.CityDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.CityDataGridViewTextBoxColumn.Name = "CityDataGridViewTextBoxColumn"
+        Me.CityDataGridViewTextBoxColumn.Width = 150
+        '
+        'ShortNameDataGridViewTextBoxColumn
+        '
+        Me.ShortNameDataGridViewTextBoxColumn.DataPropertyName = "ShortName"
+        Me.ShortNameDataGridViewTextBoxColumn.HeaderText = "ShortName"
+        Me.ShortNameDataGridViewTextBoxColumn.MinimumWidth = 8
+        Me.ShortNameDataGridViewTextBoxColumn.Name = "ShortNameDataGridViewTextBoxColumn"
+        Me.ShortNameDataGridViewTextBoxColumn.Width = 150
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(910, 566)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.DestinationsListBox)
         Me.Controls.Add(Me.AirportListBox)
         Me.Controls.Add(Me.lblDestinations)
@@ -111,6 +175,9 @@ Partial Class Form1
         Me.Controls.Add(Me.btnAdd)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WINFORMS_DBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AirportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -122,4 +189,11 @@ Partial Class Form1
     Friend WithEvents lblDestinations As Label
     Friend WithEvents AirportListBox As ListBox
     Friend WithEvents DestinationsListBox As ListBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents WINFORMS_DBDataSet As WINFORMS_DBDataSet
+    Friend WithEvents AirportBindingSource As BindingSource
+    Friend WithEvents AirportTableAdapter As WINFORMS_DBDataSetTableAdapters.AirportTableAdapter
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ShortNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

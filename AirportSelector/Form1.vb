@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Data.SqlClient
+
+Public Class Form1
     Dim airports As ArrayList = New ArrayList()
 
     Public Sub Form1()
@@ -32,6 +34,25 @@
     End Sub
 
     Private Sub btnRemoveAirport_Click(sender As Object, e As EventArgs) Handles btnRemoveAirport.Click
-        AirportListBox.Items.Remove(e)
+        Dim DialogResult As DialogResult = MessageBox.Show("Are you sure you want to remove this airport?", "Remove airport", MessageBoxButtons.YesNo)
+        If (DialogResult = DialogResult.Yes) Then
+            'do something
+        ElseIf (DialogResult = DialogResult.No) Then
+            'do something else
+        End If
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WINFORMS_DBDataSet.Airport' table. You can move, or remove it, as needed.
+        Me.AirportTableAdapter.Fill(Me.WINFORMS_DBDataSet.Airport)
+
+        'Dim connection As SqlConnection = New SqlConnection()
+        'connection.ConnectionString = "Data Source=localhost;Initial Catalog=WINFORMS_DB;Integrated Security=True"
+        'connection.Open()
+        'Dim adp As SqlDataAdapter = New SqlDataAdapter("select * from Airport", connection)
+        'Dim ds As DataSet = New DataSet()
+        'adp.Fill(ds)
+
+        'DataGridView1.DataSource = ds.Tables(0)
     End Sub
 End Class
